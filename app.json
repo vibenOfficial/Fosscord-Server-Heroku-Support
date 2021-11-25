@@ -6,6 +6,7 @@
     "keywords": [
         "discord",
         "clone"
-    ]
+    ],
+    "stack": "container"
 
 }
