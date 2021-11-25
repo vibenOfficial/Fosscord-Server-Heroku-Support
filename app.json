@@ -1,0 +1,11 @@
+{
+    "name": "Jordiscord",
+    "description": "Discord Clone, but with some fun from JordanViknar",
+    "repository": "https://github.com/JordanViknar/jordiscord-server-not-serious",
+    "logo": "https://raw.githubusercontent.com/fosscord/fosscord/master/assets/logo_big_transparent.png",
+    "keywords": [
+        "discord",
+        "clone"
+    ]
+
+}
