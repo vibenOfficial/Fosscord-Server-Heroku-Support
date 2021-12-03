@@ -1,7 +1,7 @@
 {
-    "name": "Jordiscord",
-    "description": "Discord Clone, but with some fun from JordanViknar",
-    "repository": "https://github.com/JordanViknar/jordiscord-server-not-serious",
+    "name": "Fosscord",
+    "description": "Discord Open Source Clone",
+    "repository": "https://github.com/JordanViknar/fosscord-server-heroku-support",
     "logo": "https://raw.githubusercontent.com/fosscord/fosscord/master/assets/logo_big_transparent.png",
     "keywords": [
         "discord",
