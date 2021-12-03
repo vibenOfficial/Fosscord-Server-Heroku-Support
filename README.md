@@ -12,6 +12,7 @@
    <a href="https://opencollective.com/fosscord">
     <img src="https://opencollective.com/fosscord/tiers/badge.svg">
   </a>
+  <a title="Heroku" target="_blank" href="https://heroku.com/deploy?template=https://github.com/JordanViknar/fosscord-server-heroku-support"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 </p>
 
 ## [About](https://fosscord.com)
