@@ -2,6 +2,8 @@ import { Column, Entity } from "typeorm";
 import { BaseClassWithoutId, PrimaryIdColumn } from "./BaseClass";
 import crypto from "crypto";
 import { Snowflake } from "../util/Snowflake";
+import { SessionsReplace } from "..";
+import { hostname } from "os";
 
 @Entity("config")
 export class ConfigEntity extends BaseClassWithoutId {
@@ -47,6 +49,11 @@ export interface ConfigValue {
 		endpointClient: string | null;
 		endpointPublic: string | null;
 		endpointPrivate: string | null;
+	};
+	api: {
+		defaultVersion: string;
+		activeVersions: string[];
+		useFosscordEnhancements: boolean;
 	};
 	general: {
 		instanceName: string;
@@ -142,6 +149,7 @@ export interface ConfigValue {
 			minUpperCase: number;
 			minSymbols: number;
 		};
+		incrementingDiscriminators: boolean; // random otherwise
 	};
 	regions: {
 		default: string;
@@ -172,6 +180,22 @@ export interface ConfigValue {
 		allowTemplateCreation: Boolean;
 		allowDiscordTemplates: Boolean;
 		allowRaws: Boolean;
+	},
+	client: {
+		useTestClient: Boolean;
+		relases: {
+			useLocalRelases: Boolean; //TODO
+			upstreamVersion: string;
+		}
+	},
+	metrics: {
+		timeout: number;
+	},
+	sentry: {
+		enabled: boolean;
+		endpoint: string;
+		traceSampleRate: number;
+		environment: string;
 	}
 }
 
@@ -185,6 +209,11 @@ export const DefaultConfigOptions: ConfigValue = {
 		endpointClient: null,
 		endpointPrivate: null,
 		endpointPublic: null,
+	},
+	api: {
+		defaultVersion: "9",
+		activeVersions: ["6", "7", "8", "9"],
+		useFosscordEnhancements: true,
 	},
 	general: {
 		instanceName: "Fosscord Instance",
@@ -307,6 +336,7 @@ export const DefaultConfigOptions: ConfigValue = {
 			minUpperCase: 2,
 			minSymbols: 0,
 		},
+		incrementingDiscriminators: false,
 	},
 	regions: {
 		default: "fosscord",
@@ -346,5 +376,21 @@ export const DefaultConfigOptions: ConfigValue = {
 		allowTemplateCreation: true,
 		allowDiscordTemplates: true,
 		allowRaws: false
+	},
+	client: {
+		useTestClient: true,
+		relases: {
+			useLocalRelases: true,
+			upstreamVersion: "0.0.264"
+		}
+	},
+	metrics: {
+		timeout: 30000
+	},
+	sentry: {
+		enabled: false,
+		endpoint: "https://05e8e3d005f34b7d97e920ae5870a5e5@sentry.thearcanebrony.net/6",
+		traceSampleRate: 1.0,
+		environment: hostname()
 	}
 };
