@@ -2821,6 +2821,10 @@
 						"type": "string",
 						"format": "date-time"
 					},
+					"premium_since": {
+						"type": "string",
+						"format": "date-time"
+					},
 					"verified": {
 						"type": "boolean"
 					},
@@ -3115,7 +3119,7 @@
 						"type": "boolean"
 					},
 					"status": {
-						"enum": ["dnd", "idle", "offline", "online"],
+						"enum": ["dnd", "idle", "offline", "online", "invisible"],
 						"type": "string"
 					},
 					"stream_notifications_enabled": {
@@ -3800,7 +3804,8 @@
 						"format": "date-time"
 					},
 					"premium_since": {
-						"type": "integer"
+						"type": "string",
+						"format": "date-time"
 					},
 					"deaf": {
 						"type": "boolean"
@@ -5672,7 +5677,7 @@
 						"type": "boolean"
 					},
 					"status": {
-						"enum": ["dnd", "idle", "offline", "online"],
+						"enum": ["dnd", "idle", "offline", "online", "invisible"],
 						"type": "string"
 					},
 					"stream_notifications_enabled": {
