@@ -61,7 +61,7 @@ export class BaseClassWithoutId extends BaseEntity {
 	}
 }
 
-export const PrimaryIdColumn = process.env.DATABASE?.startsWith("mongodb") ? ObjectIdColumn : PrimaryColumn;
+export const PrimaryIdColumn = process.env.DATABASE_URL?.startsWith("mongodb") ? ObjectIdColumn : PrimaryColumn;
 
 export class BaseClass extends BaseClassWithoutId {
 	@PrimaryIdColumn()
