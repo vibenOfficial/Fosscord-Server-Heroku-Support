@@ -10,7 +10,7 @@ import { yellow, green, red } from "picocolors";
 
 var promise: Promise<any>;
 var dbConnection: Connection | undefined;
-let dbConnectionString = process.env.DATABASE || path.join(process.cwd(), "database.db");
+let dbConnectionString = process.env.DATABASE_URL || path.join(process.cwd(), "database.db");
 
 export function initDatabase(): Promise<Connection> {
 	if (promise) return promise; // prevent initalizing multiple times
